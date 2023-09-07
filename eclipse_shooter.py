@@ -187,6 +187,7 @@ if __name__ == "__main__":
     # 撮影ループ
     while True:
         now = get_current_time()
+        # イベント時刻（第一接触、第二接触、第三接触）までの時間（秒数）をカウントダウン
         logger.info( "{}".format([title[:3]+':'+str(int((event-now).total_seconds())) for title,event in event_time]),extra={'date':'(utc:{})'.format(str(now)[11:19])} )
 
         # すべての撮影スクリプトリストのうち
