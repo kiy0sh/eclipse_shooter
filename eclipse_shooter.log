@@ -1,0 +1,809 @@
+2023-09-07 22:04:11,677 SequentialA1
+                              ss  iso                 format white_balance  color_temperature
+utc                                                                                          
+2023-09-07 17:10:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+...                          ...  ...                    ...           ...                ...
+2023-09-07 18:38:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:38:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:40:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:04:11,696 SequentialA2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 17:10:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 18:38:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:38:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:04:11,727 DiamondRingA
+                             ss       iso                 format      white_balance  color_temperature
+utc                                                                                                   
+2023-09-07 18:40:21+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:22+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:23+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:24+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:25+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                         ...       ...                    ...                ...                ...
+2023-09-07 18:41:46+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:47+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:48+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:49+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:50+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:04:11,762 BlackSun
+                                                      ss  iso                 format      white_balance  color_temperature
+utc                                                                                                                       
+2023-09-07 18:42:03+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:04+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:05+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:06+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:07+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                                                  ...  ...                    ...                ...                ...
+2023-09-07 18:44:38+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:39+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:40+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:41+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:42+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[160 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:04:11,793 DiamondRingB
+                              ss       iso                 format      white_balance  color_temperature
+utc                                                                                                    
+2023-09-07 18:44:55+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:56+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:57+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:58+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:59+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...       ...                    ...                ...                ...
+2023-09-07 18:46:20+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:21+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:22+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:23+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:24+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:04:11,825 SequentialB1
+                              ss  iso                 format  white_balance  color_temperature
+utc                                                                                           
+2023-09-07 18:46:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+...                          ...  ...                    ...            ...                ...
+2023-09-07 20:14:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:14:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:16:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:04:11,855 SequentialB2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 18:46:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 20:14:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:14:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:16:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:04:11,856 ['1st:-24011', '2nd:-19380', 'max:-19248', '3rd:-19116', '4th:-14471']
+2023-09-07 22:04:12,868 ['1st:-24012', '2nd:-19381', 'max:-19249', '3rd:-19117', '4th:-14472']
+2023-09-07 22:04:13,878 ['1st:-24013', '2nd:-19382', 'max:-19250', '3rd:-19118', '4th:-14473']
+2023-09-07 22:04:14,889 ['1st:-24014', '2nd:-19383', 'max:-19251', '3rd:-19119', '4th:-14474']
+2023-09-07 22:04:15,892 ['1st:-24015', '2nd:-19384', 'max:-19252', '3rd:-19120', '4th:-14475']
+2023-09-07 22:04:16,905 ['1st:-24016', '2nd:-19385', 'max:-19253', '3rd:-19121', '4th:-14476']
+2023-09-07 22:04:17,920 ['1st:-24017', '2nd:-19386', 'max:-19254', '3rd:-19122', '4th:-14477']
+2023-09-07 22:04:18,930 ['1st:-24018', '2nd:-19387', 'max:-19255', '3rd:-19123', '4th:-14478']
+2023-09-07 22:04:19,945 ['1st:-24019', '2nd:-19388', 'max:-19256', '3rd:-19124', '4th:-14479']
+2023-09-07 22:04:20,961 ['1st:-24020', '2nd:-19389', 'max:-19257', '3rd:-19125', '4th:-14480']
+2023-09-07 22:04:21,973 ['1st:-24021', '2nd:-19390', 'max:-19258', '3rd:-19126', '4th:-14481']
+2023-09-07 22:04:22,990 ['1st:-24022', '2nd:-19391', 'max:-19259', '3rd:-19127', '4th:-14482']
+2023-09-07 22:04:23,998 ['1st:-24023', '2nd:-19392', 'max:-19260', '3rd:-19128', '4th:-14483']
+2023-09-07 22:04:25,012 ['1st:-24025', '2nd:-19394', 'max:-19262', '3rd:-19130', '4th:-14485']
+2023-09-07 22:04:26,027 ['1st:-24026', '2nd:-19395', 'max:-19263', '3rd:-19131', '4th:-14486']
+2023-09-07 22:04:27,042 ['1st:-24027', '2nd:-19396', 'max:-19264', '3rd:-19132', '4th:-14487']
+2023-09-07 22:05:53,559 SequentialA1
+                              ss  iso                 format white_balance  color_temperature
+utc                                                                                          
+2023-09-07 17:10:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+...                          ...  ...                    ...           ...                ...
+2023-09-07 18:38:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:38:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:40:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:05:53,585 SequentialA2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 17:10:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 18:38:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:38:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:05:53,615 DiamondRingA
+                             ss       iso                 format      white_balance  color_temperature
+utc                                                                                                   
+2023-09-07 18:40:21+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:22+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:23+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:24+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:25+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                         ...       ...                    ...                ...                ...
+2023-09-07 18:41:46+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:47+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:48+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:49+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:50+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:05:53,636 BlackSun
+                                                      ss  iso                 format      white_balance  color_temperature
+utc                                                                                                                       
+2023-09-07 18:42:03+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:04+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:05+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:06+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:07+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                                                  ...  ...                    ...                ...                ...
+2023-09-07 18:44:38+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:39+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:40+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:41+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:42+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[160 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:05:53,653 DiamondRingB
+                              ss       iso                 format      white_balance  color_temperature
+utc                                                                                                    
+2023-09-07 18:44:55+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:56+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:57+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:58+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:59+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...       ...                    ...                ...                ...
+2023-09-07 18:46:20+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:21+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:22+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:23+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:24+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:05:53,674 SequentialB1
+                              ss  iso                 format  white_balance  color_temperature
+utc                                                                                           
+2023-09-07 18:46:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+...                          ...  ...                    ...            ...                ...
+2023-09-07 20:14:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:14:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:16:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:05:53,702 SequentialB2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 18:46:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 20:14:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:14:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:16:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:05:53,703 ['1st:-24113', '2nd:-19482', 'max:-19350', '3rd:-19218', '4th:-14573']
+2023-09-07 22:05:54,708 ['1st:-24114', '2nd:-19483', 'max:-19351', '3rd:-19219', '4th:-14574']
+2023-09-07 22:05:55,722 ['1st:-24115', '2nd:-19484', 'max:-19352', '3rd:-19220', '4th:-14575']
+2023-09-07 22:05:56,738 ['1st:-24116', '2nd:-19485', 'max:-19353', '3rd:-19221', '4th:-14576']
+2023-09-07 22:05:57,751 ['1st:-24117', '2nd:-19486', 'max:-19354', '3rd:-19222', '4th:-14577']
+2023-09-07 22:05:58,764 ['1st:-24118', '2nd:-19487', 'max:-19355', '3rd:-19223', '4th:-14578']
+2023-09-07 22:05:59,778 ['1st:-24119', '2nd:-19488', 'max:-19356', '3rd:-19224', '4th:-14579']
+2023-09-07 22:06:00,789 ['1st:-24120', '2nd:-19489', 'max:-19357', '3rd:-19225', '4th:-14580']
+2023-09-07 22:06:01,803 ['1st:-24121', '2nd:-19490', 'max:-19358', '3rd:-19226', '4th:-14581']
+2023-09-07 22:06:02,810 ['1st:-24122', '2nd:-19491', 'max:-19359', '3rd:-19227', '4th:-14582']
+2023-09-07 22:06:03,825 ['1st:-24123', '2nd:-19492', 'max:-19360', '3rd:-19228', '4th:-14583']
+2023-09-07 22:07:02,712 SequentialA1
+                              ss  iso                 format white_balance  color_temperature
+utc                                                                                          
+2023-09-07 17:10:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+...                          ...  ...                    ...           ...                ...
+2023-09-07 18:38:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:38:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:40:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:02,730 SequentialA2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 17:10:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 18:38:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:38:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:02,754 DiamondRingA
+                             ss       iso                 format      white_balance  color_temperature
+utc                                                                                                   
+2023-09-07 18:40:21+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:22+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:23+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:24+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:25+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                         ...       ...                    ...                ...                ...
+2023-09-07 18:41:46+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:47+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:48+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:49+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:50+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:02,786 BlackSun
+                                                      ss  iso                 format      white_balance  color_temperature
+utc                                                                                                                       
+2023-09-07 18:42:03+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:04+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:05+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:06+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:07+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                                                  ...  ...                    ...                ...                ...
+2023-09-07 18:44:38+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:39+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:40+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:41+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:42+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[160 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:02,815 DiamondRingB
+                              ss       iso                 format      white_balance  color_temperature
+utc                                                                                                    
+2023-09-07 18:44:55+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:56+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:57+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:58+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:59+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...       ...                    ...                ...                ...
+2023-09-07 18:46:20+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:21+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:22+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:23+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:24+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:02,846 SequentialB1
+                              ss  iso                 format  white_balance  color_temperature
+utc                                                                                           
+2023-09-07 18:46:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+...                          ...  ...                    ...            ...                ...
+2023-09-07 20:14:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:14:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:16:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:02,866 SequentialB2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 18:46:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 20:14:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:14:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:16:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:02,872 ['1st:-24182', '2nd:-19551', 'max:-19419', '3rd:-19287', '4th:-14642']
+2023-09-07 22:07:03,893 ['1st:-24183', '2nd:-19552', 'max:-19420', '3rd:-19288', '4th:-14643']
+2023-09-07 22:07:04,909 ['1st:-24184', '2nd:-19553', 'max:-19421', '3rd:-19289', '4th:-14644']
+2023-09-07 22:07:05,926 ['1st:-24185', '2nd:-19554', 'max:-19422', '3rd:-19290', '4th:-14645']
+2023-09-07 22:07:06,937 ['1st:-24186', '2nd:-19555', 'max:-19423', '3rd:-19291', '4th:-14646']
+2023-09-07 22:07:07,943 ['1st:-24187', '2nd:-19556', 'max:-19424', '3rd:-19292', '4th:-14647']
+2023-09-07 22:07:08,953 ['1st:-24188', '2nd:-19557', 'max:-19425', '3rd:-19293', '4th:-14648']
+2023-09-07 22:07:40,318 SequentialA1
+                              ss  iso                 format white_balance  color_temperature
+utc                                                                                          
+2023-09-07 17:10:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+...                          ...  ...                    ...           ...                ...
+2023-09-07 18:38:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:38:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:40:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:40,338 SequentialA2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 17:10:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 18:38:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:38:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:40,354 DiamondRingA
+                             ss       iso                 format      white_balance  color_temperature
+utc                                                                                                   
+2023-09-07 18:40:21+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:22+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:23+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:24+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:25+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                         ...       ...                    ...                ...                ...
+2023-09-07 18:41:46+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:47+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:48+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:49+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:50+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:40,378 BlackSun
+                                                      ss  iso                 format      white_balance  color_temperature
+utc                                                                                                                       
+2023-09-07 18:42:03+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:04+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:05+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:06+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:07+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                                                  ...  ...                    ...                ...                ...
+2023-09-07 18:44:38+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:39+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:40+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:41+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:42+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[160 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:40,408 DiamondRingB
+                              ss       iso                 format      white_balance  color_temperature
+utc                                                                                                    
+2023-09-07 18:44:55+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:56+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:57+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:58+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:59+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...       ...                    ...                ...                ...
+2023-09-07 18:46:20+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:21+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:22+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:23+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:24+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:40,435 SequentialB1
+                              ss  iso                 format  white_balance  color_temperature
+utc                                                                                           
+2023-09-07 18:46:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+...                          ...  ...                    ...            ...                ...
+2023-09-07 20:14:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:14:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:16:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:40,461 SequentialB2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 18:46:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 20:14:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:14:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:16:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:40,462 ['1st:36979', '2nd:41610', 'max:41742', '3rd:41874', '4th:46519']
+2023-09-07 22:07:41,476 ['1st:36978', '2nd:41609', 'max:41741', '3rd:41873', '4th:46518']
+2023-09-07 22:07:42,493 ['1st:36977', '2nd:41608', 'max:41740', '3rd:41872', '4th:46517']
+2023-09-07 22:07:43,504 ['1st:36976', '2nd:41607', 'max:41739', '3rd:41871', '4th:46516']
+2023-09-07 22:07:55,803 SequentialA1
+                              ss  iso                 format white_balance  color_temperature
+utc                                                                                          
+2023-09-07 17:10:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+...                          ...  ...                    ...           ...                ...
+2023-09-07 18:38:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:38:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:40:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:55,826 SequentialA2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 17:10:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 18:38:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:38:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:55,848 DiamondRingA
+                             ss       iso                 format      white_balance  color_temperature
+utc                                                                                                   
+2023-09-07 18:40:21+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:22+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:23+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:24+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:25+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                         ...       ...                    ...                ...                ...
+2023-09-07 18:41:46+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:47+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:48+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:49+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:50+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:55,872 BlackSun
+                                                      ss  iso                 format      white_balance  color_temperature
+utc                                                                                                                       
+2023-09-07 18:42:03+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:04+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:05+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:06+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:07+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                                                  ...  ...                    ...                ...                ...
+2023-09-07 18:44:38+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:39+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:40+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:41+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:42+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[160 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:55,894 DiamondRingB
+                              ss       iso                 format      white_balance  color_temperature
+utc                                                                                                    
+2023-09-07 18:44:55+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:56+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:57+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:58+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:59+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...       ...                    ...                ...                ...
+2023-09-07 18:46:20+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:21+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:22+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:23+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:24+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:55,917 SequentialB1
+                              ss  iso                 format  white_balance  color_temperature
+utc                                                                                           
+2023-09-07 18:46:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+...                          ...  ...                    ...            ...                ...
+2023-09-07 20:14:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:14:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:16:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:55,940 SequentialB2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 18:46:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 20:14:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:14:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:16:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:07:55,942 ['1st:964', '2nd:5595', 'max:5727', '3rd:5859', '4th:10504']
+2023-09-07 22:07:56,956 ['1st:963', '2nd:5594', 'max:5726', '3rd:5858', '4th:10503']
+2023-09-07 22:07:57,970 ['1st:962', '2nd:5593', 'max:5725', '3rd:5857', '4th:10502']
+2023-09-07 22:07:58,982 ['1st:961', '2nd:5592', 'max:5724', '3rd:5856', '4th:10501']
+2023-09-07 22:07:59,995 ['1st:960', '2nd:5591', 'max:5723', '3rd:5855', '4th:10500']
+2023-09-07 22:08:01,012 ['1st:958', '2nd:5589', 'max:5721', '3rd:5853', '4th:10498']
+2023-09-07 22:08:02,028 ['1st:957', '2nd:5588', 'max:5720', '3rd:5852', '4th:10497']
+2023-09-07 22:08:03,042 ['1st:956', '2nd:5587', 'max:5719', '3rd:5851', '4th:10496']
+2023-09-07 22:08:04,057 ['1st:955', '2nd:5586', 'max:5718', '3rd:5850', '4th:10495']
+2023-09-07 22:08:05,066 ['1st:954', '2nd:5585', 'max:5717', '3rd:5849', '4th:10494']
+2023-09-07 22:08:06,080 ['1st:953', '2nd:5584', 'max:5716', '3rd:5848', '4th:10493']
+2023-09-07 22:08:07,096 ['1st:952', '2nd:5583', 'max:5715', '3rd:5847', '4th:10492']
+2023-09-07 22:08:08,112 ['1st:951', '2nd:5582', 'max:5714', '3rd:5846', '4th:10491']
+2023-09-07 22:08:09,125 ['1st:950', '2nd:5581', 'max:5713', '3rd:5845', '4th:10490']
+2023-09-07 22:08:10,142 ['1st:949', '2nd:5580', 'max:5712', '3rd:5844', '4th:10489']
+2023-09-07 22:08:11,156 ['1st:948', '2nd:5579', 'max:5711', '3rd:5843', '4th:10488']
+2023-09-07 22:08:12,169 ['1st:947', '2nd:5578', 'max:5710', '3rd:5842', '4th:10487']
+2023-09-07 22:08:13,182 ['1st:946', '2nd:5577', 'max:5709', '3rd:5841', '4th:10486']
+2023-09-07 22:08:14,185 ['1st:945', '2nd:5576', 'max:5708', '3rd:5840', '4th:10485']
+2023-09-07 22:08:15,201 ['1st:944', '2nd:5575', 'max:5707', '3rd:5839', '4th:10484']
+2023-09-07 22:08:16,218 ['1st:943', '2nd:5574', 'max:5706', '3rd:5838', '4th:10483']
+2023-09-07 22:08:31,459 SequentialA1
+                              ss  iso                 format white_balance  color_temperature
+utc                                                                                          
+2023-09-07 17:10:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:11:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 17:12:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+...                          ...  ...                    ...           ...                ...
+2023-09-07 18:38:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:38:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:39:30+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+2023-09-07 18:40:00+00:00  1/500  100  RAW + Large Fine JPEG        Cloudy                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:08:31,481 SequentialA2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 17:10:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:11:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 17:12:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 18:38:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:38:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:39:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:08:31,503 DiamondRingA
+                             ss       iso                 format      white_balance  color_temperature
+utc                                                                                                   
+2023-09-07 18:40:21+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:22+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:23+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:24+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:40:25+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                         ...       ...                    ...                ...                ...
+2023-09-07 18:41:46+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:47+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:48+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:49+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:41:50+00:00  1/30  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:08:31,526 BlackSun
+                                                      ss  iso                 format      white_balance  color_temperature
+utc                                                                                                                       
+2023-09-07 18:42:03+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:04+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:05+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:06+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:42:07+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                                                  ...  ...                    ...                ...                ...
+2023-09-07 18:44:38+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:39+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:40+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:41+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:42+00:00  1/1000,1/320,1/100,1/10,0.3,1  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[160 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:08:31,553 DiamondRingB
+                              ss       iso                 format      white_balance  color_temperature
+utc                                                                                                    
+2023-09-07 18:44:55+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:56+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:57+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:58+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:44:59+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...       ...                    ...                ...                ...
+2023-09-07 18:46:20+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:21+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:22+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:23+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:46:24+00:00  1/500  Auto,100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[90 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:08:31,575 SequentialB1
+                              ss  iso                 format  white_balance  color_temperature
+utc                                                                                           
+2023-09-07 18:46:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:47:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 18:48:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+...                          ...  ...                    ...            ...                ...
+2023-09-07 20:14:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:14:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:15:30+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+2023-09-07 20:16:00+00:00  1/500  100  RAW + Large Fine JPEG            NaN                NaN
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:08:31,599 SequentialB2
+                              ss  iso                 format      white_balance  color_temperature
+utc                                                                                               
+2023-09-07 18:46:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:47:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 18:48:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+...                          ...  ...                    ...                ...                ...
+2023-09-07 20:14:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:14:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:15:45+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+2023-09-07 20:16:15+00:00  1/500  100  RAW + Large Fine JPEG  Color Temperature             2500.0
+
+[180 rows x 5 columns]
+--------------------------------------------------
+2023-09-07 22:08:31,600 ['1st:-2671', '2nd:1959', 'max:2091', '3rd:2223', '4th:6868']
+2023-09-07 22:08:32,608 ['1st:-2672', '2nd:1958', 'max:2090', '3rd:2222', '4th:6867']
+2023-09-07 22:08:33,622 ['1st:-2673', '2nd:1957', 'max:2089', '3rd:2221', '4th:6866']
+2023-09-07 22:08:34,635 ['1st:-2674', '2nd:1956', 'max:2088', '3rd:2220', '4th:6865']
+2023-09-07 22:08:35,651 ['1st:-2675', '2nd:1955', 'max:2087', '3rd:2219', '4th:6864']
+2023-09-07 22:08:36,664 ['1st:-2676', '2nd:1954', 'max:2086', '3rd:2218', '4th:6863']
+2023-09-07 22:08:37,679 ['1st:-2677', '2nd:1953', 'max:2085', '3rd:2217', '4th:6862']
+2023-09-07 22:08:38,694 ['1st:-2678', '2nd:1952', 'max:2084', '3rd:2216', '4th:6861']
+2023-09-07 22:08:39,703 ['1st:-2679', '2nd:1951', 'max:2083', '3rd:2215', '4th:6860']
+2023-09-07 22:08:40,717 ['1st:-2680', '2nd:1950', 'max:2082', '3rd:2214', '4th:6859']
+2023-09-07 22:08:41,731 ['1st:-2681', '2nd:1949', 'max:2081', '3rd:2213', '4th:6858']
+2023-09-07 22:08:42,744 ['1st:-2682', '2nd:1948', 'max:2080', '3rd:2212', '4th:6857']
+2023-09-07 22:08:43,760 ['1st:-2683', '2nd:1947', 'max:2079', '3rd:2211', '4th:6856']
+2023-09-07 22:08:44,767 ['1st:-2684', '2nd:1946', 'max:2078', '3rd:2210', '4th:6855']
+2023-09-07 22:08:45,773 ['1st:-2685', '2nd:1945', 'max:2077', '3rd:2209', '4th:6854']
+2023-09-07 22:08:45,779 SequentialA2 , {'ss': '1/500', 'iso': '100', 'format': 'RAW + Large Fine JPEG', 'white_balance': 'Color Temperature', 'color_temperature': '2500.0'}
+2023-09-07 22:08:46,787 ['1st:-2686', '2nd:1944', 'max:2076', '3rd:2208', '4th:6853']
+2023-09-07 22:08:47,800 ['1st:-2687', '2nd:1943', 'max:2075', '3rd:2207', '4th:6852']
+2023-09-07 22:08:48,814 ['1st:-2688', '2nd:1942', 'max:2074', '3rd:2206', '4th:6851']
+2023-09-07 22:08:49,828 ['1st:-2689', '2nd:1941', 'max:2073', '3rd:2205', '4th:6850']
+2023-09-07 22:08:50,842 ['1st:-2690', '2nd:1940', 'max:2072', '3rd:2204', '4th:6849']
+2023-09-07 22:08:51,850 ['1st:-2691', '2nd:1939', 'max:2071', '3rd:2203', '4th:6848']
+2023-09-07 22:08:52,863 ['1st:-2692', '2nd:1938', 'max:2070', '3rd:2202', '4th:6847']
+2023-09-07 22:08:53,876 ['1st:-2693', '2nd:1937', 'max:2069', '3rd:2201', '4th:6846']
+2023-09-07 22:08:54,880 ['1st:-2694', '2nd:1936', 'max:2068', '3rd:2200', '4th:6845']
+2023-09-07 22:08:55,888 ['1st:-2695', '2nd:1935', 'max:2067', '3rd:2199', '4th:6844']
+2023-09-07 22:08:56,900 ['1st:-2696', '2nd:1934', 'max:2066', '3rd:2198', '4th:6843']
+2023-09-07 22:08:57,914 ['1st:-2697', '2nd:1933', 'max:2065', '3rd:2197', '4th:6842']
+2023-09-07 22:09:01,195 ['1st:-2701', '2nd:1929', 'max:2061', '3rd:2193', '4th:6838']
+2023-09-07 22:09:01,200 SequentialA1 , {'ss': '1/500', 'iso': '100', 'format': 'RAW + Large Fine JPEG', 'white_balance': 'Cloudy', 'color_temperature': 'nan'}
+2023-09-07 22:09:02,208 ['1st:-2702', '2nd:1928', 'max:2060', '3rd:2192', '4th:6837']
+2023-09-07 22:09:03,222 ['1st:-2703', '2nd:1927', 'max:2059', '3rd:2191', '4th:6836']
+2023-09-07 22:09:04,237 ['1st:-2704', '2nd:1926', 'max:2058', '3rd:2190', '4th:6835']
+2023-09-07 22:09:05,241 ['1st:-2705', '2nd:1925', 'max:2057', '3rd:2189', '4th:6834']
+2023-09-07 22:09:06,244 ['1st:-2706', '2nd:1924', 'max:2056', '3rd:2188', '4th:6833']
+2023-09-07 22:09:07,249 ['1st:-2707', '2nd:1923', 'max:2055', '3rd:2187', '4th:6832']
