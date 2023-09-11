@@ -24,9 +24,10 @@ fh.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
 sh.setFormatter(logging.Formatter('%(message)s'))
 
 # 現在時刻取得（撮影テスト時に時刻をずらして実験する）
-def get_current_time(shift=14):
+def get_current_time(shift=15):
 
     # JST 15 → (hours = +20) → UTC 17
+    # JST 20 → (hours = +15) → UTC 17
     # JST 22 → (hours = +13) → UTC 17
 
     d = datetime.utcnow() + timedelta(hours=shift)
