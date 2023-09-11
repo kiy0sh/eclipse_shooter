@@ -1,0 +1,5 @@
+# eclipse_shooter
+Shooting script for Eclipse with Gphoto2
+
+PythonでGPhoto2を利用してEOS 6Dなどのデジタルカメラを操作し、エクセルで指定したスクリプトに沿って自動的に日食の撮影を行います。
+Raspberry piなどを利用して稼働させることでPCレスで撮影を行う事が出来ます。
