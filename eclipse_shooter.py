@@ -1,159 +1,165 @@
+# coding: utf-8
 from datetime import datetime, timedelta, timezone
 import logging
 import numpy as np
 import pandas as pd
 import time
+import traceback
 import warnings
 warnings.simplefilter('ignore')
-
-try:
-    import gphoto2 as gp
-    camera_initialized = True
-except:
-    camera_initialized = False
-    pass
-
-# loggerの生成
-logger = logging.getLogger('mylog')
-logger.setLevel(logging.DEBUG)
-fh = logging.FileHandler('eclipse_shooter.log')
-sh = logging.StreamHandler()
-logger.addHandler(fh)
-logger.addHandler(sh)
-fh.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
-sh.setFormatter(logging.Formatter('%(message)s'))
+import gphoto2 as gp
 
 # 現在時刻取得（撮影テスト時に時刻をずらして実験するためにshiftを指定）
-def get_current_time(shift=16):
+def get_current_time(shift=25):
     """
     現在時刻          shift   日食時刻
+    JST 10 → (hours = +25) → UTC 17
+    JST 11 → (hours = +24) → UTC 17
+    JST 12 → (hours = +23) → UTC 17
+    JST 13 → (hours = +22) → UTC 17
+    JST 14 → (hours = +21) → UTC 17
     JST 15 → (hours = +20) → UTC 17
+    JST 16 → (hours = +19) → UTC 17
+    JST 17 → (hours = +18) → UTC 17
+    JST 18 → (hours = +17) → UTC 17
     JST 19 → (hours = +16) → UTC 17
     JST 20 → (hours = +15) → UTC 17
+    JST 21 → (hours = +14) → UTC 17
     JST 22 → (hours = +13) → UTC 17
     """
-
     d = datetime.utcnow() + timedelta(hours=shift)
     return d.astimezone(timezone.utc)
 
-# EOS6Dを制御するクラス
-class EOS(object):
+# カメラを制御するクラス
+class camera_control(object):
+    def __init__(self, logger, debug=False):
+        self._logger = logger
+        self._setting_updated = False
 
-    def __init__(self):
-
-        if not camera_initialized :
-            return
+        # GPhoto2のデバッグログを取得
+        if debug :
+            callback_obj = gp.check_result(gp.gp_log_add_func(gp.GP_LOG_DATA, self._callback))
 
         # カメラをオープン
-        self._camera = gp.check_result(gp.gp_camera_new())
-        self._context = gp.gp_context_new()
+        self._camera = gp.Camera()
+        while True:
+            try:
+                self._camera.init()
+                break
+            except gp.GPhoto2Error as ex:
+                if ex.code == gp.GP_ERROR_MODEL_NOT_FOUND:
+                    self._logger.error( "No camera detected. Please  connect camera." )
+                    time.sleep(2)
+                    continue
+                raise
 
-        # カメラの初期化
-        gp.check_result(gp.gp_camera_init(self._camera, self._context))
+        # カメラの情報表示
+        text = self._camera.get_summary()
+        self._logger.info('Connected to camera.')
+        self._logger.info('======= Summary info.')
+        self._logger.info(str(text))
 
-        # カメラの設定ウィジェットを取得
-        self._config = gp.check_result(gp.gp_camera_get_config(self._camera, self._context))
-        self._config_list = self._get_config(self._config)[1]
-
-        # カメラに初期設定を適用
-        self._setting_change(self._config_list['Camera Settings']['Capture Target'], 'Memory card')
-        self._setting_change(self._config_list['Capture Settings']['Drive Mode'], 'Single')
-        self._setting_change(self._config_list['Capture Settings']['Shutter Speed'], '1/1000')
-        self._setting_change(self._config_list['Image Settings']['ISO Speed'], '200')
-        self._setting_change(self._config_list['Image Settings']['Image Format'], 'RAW + Large Fine JPEG')
-        self._setting_change(self._config_list['Image Settings']['WhiteBalance'], 'Color Temperature')
-        self._setting_change(self._config_list['Image Settings']['Color Temperature'], '2500')
-        self._apply_setting()
-
-        # カメラの現在の設定保存
-        self.setting = {'ss':'1/1000', 'iso':'200', 'format':'RAW + Large Fine JPEG', 'white_balance':'Color Temperature', 'color_temperature':'2500'}
+        # カメラの全設定ウィジェットを取得
+        self._config = self._camera.get_config()
+        self._logger.info('======= Current configurations')
+        self._widgets = dict([self._get_config(self._config)])
 
     def __del__(self):
-        if not camera_initialized :
+        # カメラをクローズ
+        self._camera.exit()
+
+    # カメラの設定ウィジェットを再帰的に取得
+    def _get_config(self, config, depth=0):
+        label = config.get_label()
+        count = config.count_children()
+        if count == 0 :
+
+            # 現在値と選択肢を取得
+            widget_type =config.get_type()
+            if widget_type==gp.GP_WIDGET_RADIO or widget_type == gp.GP_WIDGET_MENU :
+                choices = [c for c in config.get_choices()]
+                value =config.get_value()
+                self._logger.info( ' '*depth*4+f"{label} : {value}" )
+                self._logger.debug( ' '*depth*4+f"{label} : choices = {choices}" )
+                return ( label,{'widget':config,'current':value, 'choices':choices} )
+            
+            else:
+                try :
+                    value =config.get_value()
+                    self._logger.info( ' '*depth*4+f"{label} : {value}" )
+                    return ( label,{'widget':config,'current':value} )
+                except:
+                    self._logger.info( ' '*depth*4+f"{label} : (unknown type)" )
+                    return ( label,{'widget':config,'current':None} )
+
+        else:
+            self._logger.info( ' '*depth*4+f"{label} :" )
+            return ( label,dict([self._get_config(config.get_child(i), depth+1) for i in range(count)]) )
+
+    # カメラの設定を変更
+    def setting_change(self, param, value):
+        idx = param.split('/')
+        config = self._widgets
+        for i in idx:
+            config = config[i]
+        
+        # 選択できる選択肢が与えられている場合には事前にチェック
+        if 'choices' in config:
+            if value not in config['choices'] :
+                self._logger.error( f"You set {value} for [{param}]." )
+                self._logger.error( f"Value can be choosen from {config['choices']}" )
+                raise ValueError()
+
+        # 必要があれば設定を変更            
+        if config['current'] != value:
+            config['widget'].set_value(value)
+            self._logger.debug( f"[{param}] Setting changed from {config['current']} to {value}" )
+            self._setting_updated = True
+            config['current'] = value
+
+    # 設定変更をカメラに適用
+    def apply_setting(self):
+        if not self._setting_updated :
             return
 
-        # カメラをクローズ
-        gp.check_result(gp.gp_camera_exit(self._camera, self._context))
-
-    def _get_config(self, config):
-        # カメラの設定ウィジェットを再帰的に取得
-        label = gp.check_result(gp.gp_widget_get_label(config))
-        count = gp.check_result(gp.gp_widget_count_children(config))
-        if count == 0 :
-            return [label,config]
-        return [
-            label,dict([
-                self._get_config(gp.check_result(gp.gp_widget_get_child(config, i)))
-                for i in range(count)
-            ])
-        ]
-
-    def _setting_change(self, child, data):
-        return gp.check_result(gp.gp_widget_set_value(child, data))
-
-    def _apply_setting(self):
         retry = True
         while retry:
             try:
-                gp.check_result(gp.gp_camera_set_config(self._camera, self._config, self._context))
+                self._camera.set_config(self._config)
                 retry = False
-            except:
+            except Exception as e:
+                self._logger.info( traceback.print_exc() )
+
                 # カメライベントループの開始
                 event_timeout = 5000  # イベントを待機するタイムアウト時間（ミリ秒）を設定
-                event_type, event_data = gp.check_result(gp.gp_camera_wait_for_event(self._camera, event_timeout, self._context))                
-                logger.info( f"retry[setting] :Type={event_data}, Data={event_data}" )
+                event_type, event_data = camera.wait_for_event(event_timeout)
+                self._logger.info( f"retry[setting] :Type={event_type}, Data={event_data}" )
+
+        self._setting_updated = False
 
     # 撮影条件を指定して撮影
-    def exposure(self, ss=None, iso=None, format=None, white_balance=None, color_temperature=None):
-
-        if not camera_initialized :
-            return
-
-        # 変更された撮影条件があれば設定を変更
-        setting_updated = False
-        if ss and ss!=self.setting['ss'] :
-            self._setting_change(self._config_list['Capture Settings']['Shutter Speed'], str(ss))
-            self.setting['ss'] = ss
-            setting_updated = True
-
-        if iso and iso!=self.setting['iso'] :
-            self._setting_change(self._config_list['Image Settings']['ISO Speed'], str(iso))
-            self.setting['iso'] = iso
-            setting_updated = True
-
-        if format and format!=self.setting['format'] :
-            self._setting_change(self._config_list['Image Settings']['Image Format'], str(format))
-            self.setting['format'] = format
-            setting_updated = True
-
-        if white_balance and white_balance!=self.setting['white_balance'] :
-            self._setting_change(self._config_list['Image Settings']['WhiteBalance'], str(white_balance))
-            self.setting['white_balance'] = white_balance
-            setting_updated = True
-
-        if color_temperature and color_temperature!=self.setting['color_temperature'] and color_temperature!='nan':
-            self._setting_change(self._config_list['Image Settings']['Color Temperature'], str(color_temperature))
-            self.setting['color_temperature'] = color_temperature
-            setting_updated = True
-
-        # 変更された撮影条件があれば設定を適用
-        if setting_updated :
-            self._apply_setting()
+    def exposure(self, params={}):
+        # 撮影設定
+        for key,value in params.items() :
+            self.setting_change(key, value)
+        self.apply_setting()
 
         # 撮影を行って、撮影完了まで待機
         retry = True
         while retry:
             try:
-                gp.check_result(gp.gp_camera_trigger_capture(self._camera, self._context))
+                self._camera.trigger_capture()
                 retry = False
             except:
                 # カメライベントループの開始
                 event_timeout = 5000  # イベントを待機するタイムアウト時間（ミリ秒）を設定
-                event_type, event_data = gp.check_result(gp.gp_camera_wait_for_event(self._camera, event_timeout, self._context))      
-                logger.info( f"retry[shoot] :Type={event_data}, Data={event_data}" )
+                event_type, event_data = camera.wait_for_event(event_timeout)
+                self._logger.info( f"retry[setting] :Type={event_type}, Data={event_data}" )
 
-        # スリープ時間などは実際にEOS6Dでトラブルなく撮影できるように追加したので、それぞれの機種や環境で評価必要
-        time.sleep(1.5)
+    # ログハンドラー
+    def _callback(self, level, domain, string, data=None):
+        self._logger.debug(f'[GPhoto2] level = {level}, domain = {domain}, string = {string}, data = {data}' )
+
 
 # 複数の設定が列記されている場合の組みあわせを作成する関数
 def make_combination(row, keys):
@@ -171,10 +177,21 @@ def make_combination(row, keys):
                 param_ar[i2] = flatten(param_ar[i2])
     return param_ar
 
-
 if __name__ == "__main__":
 
+    #現在時刻の取得(utc基準)
     now = get_current_time()
+
+    # loggerの生成
+    logger = logging.getLogger('mylog')
+    logger.setLevel(logging.DEBUG)
+    fh = logging.FileHandler('eclipse_shooter.log')
+    sh = logging.StreamHandler()
+    logger.addHandler(fh)
+    logger.addHandler(sh)
+    fh.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
+    sh.setFormatter(logging.Formatter('%(message)s'))
+    sh.setLevel(logging.INFO)
 
     # 撮影スクリプトデータを読込み
     df = pd.read_excel('usa_eclipse.xlsx')
@@ -193,13 +210,18 @@ if __name__ == "__main__":
         logger.info("{}\n{}\n".format(row['title'],exposure[row['title']]['list'])+'-'*50 )
 
     # カメラの初期化
-    camera = EOS()
+    camera = camera_control(logger)
+
+    # カメラに初期設定を適用
+    camera.setting_change('Camera and Driver Configuration/Camera Settings/Capture Target', 'Memory card')
+    camera.setting_change('Camera and Driver Configuration/Capture Settings/Drive Mode', 'Single')
+    camera.apply_setting()
 
     # 撮影ループ
     while True:
         now = get_current_time()
         # イベント時刻（第一接触、第二接触、第三接触）までの時間（秒数）をカウントダウン
-        logger.info( "{}".format([title[:3]+':'+str(int((event-now).total_seconds())) for title,event in event_time]),extra={'date':'(utc:{})'.format(str(now)[11:19])} )
+        logger.info( "now:{}UTC {}".format(now.strftime('%H:%M:%S'),[title[:3]+':'+str(int((event-now).total_seconds())) for title,event in event_time]),extra={'date':'(utc:{})'.format(str(now)[11:19])} )
 
         # すべての撮影スクリプトリストのうち
         queue_list = []
@@ -218,9 +240,20 @@ if __name__ == "__main__":
                 keys = ['ss','iso','format','white_balance','color_temperature']
                 for exp in make_combination(row, keys):
                     cond = dict([(keys[i],exp[i]) for i in range(len(keys))])
+
                     # 指定条件で撮像
                     logger.info( f"{row['title']} , {cond}" )
-                    camera.exposure( ss=cond['ss'], iso=cond['iso'], format=cond['format'], white_balance=cond['white_balance'], color_temperature=cond['color_temperature'] )
+                    params = {'Camera and Driver Configuration/Capture Settings/Shutter Speed': str(cond['ss']),
+                              'Camera and Driver Configuration/Image Settings/ISO Speed': str(int(cond['iso'])),
+                              'Camera and Driver Configuration/Image Settings/Image Format': str(cond['format']),
+                              'Camera and Driver Configuration/Image Settings/WhiteBalance': str(cond['white_balance'])}
+                    if cond['color_temperature']!='nan':
+                        params['Camera and Driver Configuration/Image Settings/Color Temperature'] = str(int(float(cond['color_temperature'])))
+                    camera.exposure(params)
+
+                    # 撮像後のスリープ時間などは実際にEOS6Dでトラブルなく撮影できるように追加したので、それぞれの機種や環境で評価必要
+                    time.sleep(1.5)
+
                 exposure[row['title']]['last'] = now
 
         time.sleep(1)
