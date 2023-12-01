@@ -5,6 +5,9 @@ Raspberry piなどを利用して稼働させることでPCレスで撮影を行
 
 * GPhoto2 対応機種リスト　http://www.gphoto.org/proj/libgphoto2/support.php
 
+起動時に複数のカメラ接続を確認した場合には、どちらのカメラを操作するか選択することが出来ます。
+<img src="images/select.png" width="50%">
+
 
 # 自動撮影スクリプト例
 サンプルコードでは **usa_eclipse.xlsx** を読み込み、列記された撮影シーケンスを実行します。 

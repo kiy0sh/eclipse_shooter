@@ -42,16 +42,47 @@ class camera_control(object):
 
         # カメラをオープン
         self._camera = gp.Camera()
+
+        # 接続されているカメラを認識
         while True:
-            try:
-                self._camera.init()
+            self._cameras = list(self._camera.autodetect())
+            if self._cameras:
                 break
-            except gp.GPhoto2Error as ex:
-                if ex.code == gp.GP_ERROR_MODEL_NOT_FOUND:
-                    self._logger.error( "No camera detected. Please  connect camera." )
-                    time.sleep(2)
-                    continue
-                raise
+            self._logger.error( "No camera detected. Please  connect camera." )
+            time.sleep(2)
+        self._cameras.sort(key=lambda x: x[0])
+
+        # 接続されているカメラのリスト
+        for n, (name, value) in enumerate(self._cameras):
+            self._logger.info( f"camera number{n} ({value}): {name}")
+        
+        # 操作するカメラを選択
+        if len(self._cameras)>1 :
+            choice = input('Please input number of chosen camera: ')
+            try:
+                choice = int(choice)
+            except ValueError:
+                self._logger.error('Integer values only!')
+                raise ValueError
+            if choice < 0 or choice >= len(self._cameras):
+                self._logger.error('Number out of range')
+                raise ValueError
+        else:
+            choice = 0
+        name, addr = self._cameras[choice]
+
+        # 接続情報の取得
+        port_info_list = gp.PortInfoList()
+        port_info_list.load()
+        abilities_list = gp.CameraAbilitiesList()
+        abilities_list.load()
+
+        # カメラに接続
+        idx = port_info_list.lookup_path(addr)
+        self._camera.set_port_info(port_info_list[idx])
+        idx = abilities_list.lookup_model(name)
+        self._camera.set_abilities(abilities_list[idx])
+        self._camera.init()
 
         # カメラの情報表示
         text = self._camera.get_summary()
@@ -193,6 +224,14 @@ if __name__ == "__main__":
     sh.setFormatter(logging.Formatter('%(message)s'))
     sh.setLevel(logging.INFO)
 
+    # カメラの初期化
+    camera = camera_control(logger)
+
+    # カメラに初期設定を適用
+    camera.setting_change('Camera and Driver Configuration/Camera Settings/Capture Target', 'Memory card')
+    camera.setting_change('Camera and Driver Configuration/Capture Settings/Drive Mode', 'Single')
+    camera.apply_setting()
+
     # 撮影スクリプトデータを読込み
     df = pd.read_excel('usa_eclipse.xlsx')
 
@@ -208,14 +247,6 @@ if __name__ == "__main__":
                           'ss':row['ss'], 'iso':row['iso'], 'format':row['format'], 'white_balance':row['white_balance'], 'color_temperature':row['color_temperature']})
         exposure[row['title']] = {'last': now, 'list': pd.DataFrame(data).set_index('utc').sort_index().groupby(level=0).last()}
         logger.info("{}\n{}\n".format(row['title'],exposure[row['title']]['list'])+'-'*50 )
-
-    # カメラの初期化
-    camera = camera_control(logger)
-
-    # カメラに初期設定を適用
-    camera.setting_change('Camera and Driver Configuration/Camera Settings/Capture Target', 'Memory card')
-    camera.setting_change('Camera and Driver Configuration/Capture Settings/Drive Mode', 'Single')
-    camera.apply_setting()
 
     # 撮影ループ
     while True:
