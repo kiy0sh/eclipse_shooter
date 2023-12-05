@@ -60,8 +60,9 @@ $ sudo apt-get install libatlas-base-dev
 
 # 動作確認
 
-* EOS 6D (モードダイアルはMモードにしてください。)
+* EOS R3 (モードダイアルはMモードにしてください。)
 * EOS RP (モードダイアルはMモードにしてください。)
+* EOS 6D (モードダイアルはMモードにしてください。)
 
 
 # 免責事項

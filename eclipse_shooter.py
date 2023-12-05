@@ -286,7 +286,9 @@ if __name__ == "__main__":
                     #   EOS RPの場合：1.3以上
                     #   EOS 6Dの場合：1.2以上
                     #   EOS 6D(ミラーアップ)の場合：1.0以上
-                    time.sleep(1.5)
+                    #   EOS R3の場合：0.7以上
+                    #   EOS R3(サイレントシャッターON)の場合：0.6以上
+                    time.sleep(0.6)
                     
                 exposure[row['title']]['last'] = now
 
