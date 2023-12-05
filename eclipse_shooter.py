@@ -10,7 +10,7 @@ warnings.simplefilter('ignore')
 import gphoto2 as gp
 
 # 現在時刻取得（撮影テスト時に時刻をずらして実験するためにshiftを指定）
-def get_current_time(shift=25):
+def get_current_time(shift=17):
     """
     現在時刻          shift   日食時刻
     JST 10 → (hours = +25) → UTC 17
@@ -58,14 +58,14 @@ class camera_control(object):
         
         # 操作するカメラを選択
         if len(self._cameras)>1 :
-            choice = input('Please input number of chosen camera: ')
+            choice = input(f"Please input number of chosen camera(0~{len(self._cameras)-1}): ")
             try:
                 choice = int(choice)
             except ValueError:
-                self._logger.error('Integer values only!')
+                self._logger.error("Integer values only!")
                 raise ValueError
             if choice < 0 or choice >= len(self._cameras):
-                self._logger.error('Number out of range')
+                self._logger.error("Number out of range")
                 raise ValueError
         else:
             choice = 0
@@ -86,13 +86,13 @@ class camera_control(object):
 
         # カメラの情報表示
         text = self._camera.get_summary()
-        self._logger.info('Connected to camera.')
-        self._logger.info('======= Summary info.')
+        self._logger.info("Connected to camera.")
+        self._logger.info("======= Summary info.")
         self._logger.info(str(text))
 
         # カメラの全設定ウィジェットを取得
         self._config = self._camera.get_config()
-        self._logger.info('======= Current configurations')
+        self._logger.info("======= Current configurations")
         self._widgets = dict([self._get_config(self._config)])
 
     def __del__(self):
@@ -135,11 +135,11 @@ class camera_control(object):
             config = config[i]
         
         # 選択できる選択肢が与えられている場合には事前にチェック
-        if 'choices' in config:
-            if value not in config['choices'] :
-                self._logger.error( f"You set {value} for [{param}]." )
-                self._logger.error( f"Value can be choosen from {config['choices']}" )
-                raise ValueError()
+#        if 'choices' in config:
+#            if value not in config['choices'] :
+#                self._logger.error( f"You set {value} for [{param}]." )
+#                self._logger.error( f"Value can be choosen from {config['choices']}" )
+#                raise ValueError()
 
         # 必要があれば設定を変更            
         if config['current'] != value:
@@ -159,11 +159,11 @@ class camera_control(object):
                 self._camera.set_config(self._config)
                 retry = False
             except Exception as e:
-                self._logger.info( traceback.print_exc() )
+                self._logger.info( traceback.format_exc() )
 
                 # カメライベントループの開始
                 event_timeout = 5000  # イベントを待機するタイムアウト時間（ミリ秒）を設定
-                event_type, event_data = camera.wait_for_event(event_timeout)
+                event_type, event_data = self._camera.wait_for_event(event_timeout)
                 self._logger.info( f"retry[setting] :Type={event_type}, Data={event_data}" )
 
         self._setting_updated = False
@@ -184,12 +184,12 @@ class camera_control(object):
             except:
                 # カメライベントループの開始
                 event_timeout = 5000  # イベントを待機するタイムアウト時間（ミリ秒）を設定
-                event_type, event_data = camera.wait_for_event(event_timeout)
-                self._logger.info( f"retry[setting] :Type={event_type}, Data={event_data}" )
+                event_type, event_data = self._camera.wait_for_event(event_timeout)
+                self._logger.debug( f"retry[setting] :Type={event_type}, Data={event_data}" )
 
     # ログハンドラー
     def _callback(self, level, domain, string, data=None):
-        self._logger.debug(f'[GPhoto2] level = {level}, domain = {domain}, string = {string}, data = {data}' )
+        self._logger.debug(f"[GPhoto2] level = {level}, domain = {domain}, string = {string}, data = {data}" )
 
 
 # 複数の設定が列記されている場合の組みあわせを作成する関数
@@ -275,7 +275,7 @@ if __name__ == "__main__":
                     # 指定条件で撮像
                     logger.info( f"{row['title']} , {cond}" )
                     params = {'Camera and Driver Configuration/Capture Settings/Shutter Speed': str(cond['ss']),
-                              'Camera and Driver Configuration/Image Settings/ISO Speed': str(int(cond['iso'])),
+                              'Camera and Driver Configuration/Image Settings/ISO Speed': str(cond['iso']),
                               'Camera and Driver Configuration/Image Settings/Image Format': str(cond['format']),
                               'Camera and Driver Configuration/Image Settings/WhiteBalance': str(cond['white_balance'])}
                     if cond['color_temperature']!='nan':
@@ -283,8 +283,11 @@ if __name__ == "__main__":
                     camera.exposure(params)
 
                     # 撮像後のスリープ時間などは実際にEOS6Dでトラブルなく撮影できるように追加したので、それぞれの機種や環境で評価必要
+                    #   EOS RPの場合：1.3以上
+                    #   EOS 6Dの場合：1.2以上
+                    #   EOS 6D(ミラーアップ)の場合：1.0以上
                     time.sleep(1.5)
-
+                    
                 exposure[row['title']]['last'] = now
 
         time.sleep(1)

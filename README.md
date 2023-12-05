@@ -58,6 +58,11 @@ $ sudo apt-get install libatlas-base-dev
 ![実行結果](images/result2.png)
 ![実行結果](images/result3.png)
 
+# 動作確認
+
+* EOS RP (モードダイアルはMモードにしてください。)
+
+
 # 免責事項
 
 * 必ずご自身で動作確認して、ご自身の責任においてご使用ください。
