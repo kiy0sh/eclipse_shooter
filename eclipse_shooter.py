@@ -10,7 +10,7 @@ warnings.simplefilter('ignore')
 import gphoto2 as gp
 
 # 現在時刻取得（撮影テスト時に時刻をずらして実験するためにshiftを指定）
-def get_current_time(shift=17):
+def get_current_time(shift=0):
     """
     現在時刻          shift   日食時刻
     JST 10 → (hours = +25) → UTC 17
