@@ -51,6 +51,15 @@ $ sudo apt-get install libatlas-base-dev
 * openpyxl (3.1.2)
 * gphoto2 (2.5.0)
 
+# Raspberry Pi 環境構築例
+
+実際の設定手順や動作確認方法を下記のnoteに記載しておきました。
+参考にしてみてください。 
+
+* Eclipse ShooterのためのRaspberry Piの設定  https://note.com/kiy0sh/n/nbba8a7eccc96
+
+
+
 # 実行結果例
 
 ![実行結果](images/result.png)
