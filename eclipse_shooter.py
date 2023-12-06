@@ -9,7 +9,7 @@ import warnings
 warnings.simplefilter('ignore')
 import gphoto2 as gp
 
-# 現在時刻取得（撮影テスト時に時刻をずらして実験するためにshiftを指定）
+# 現在時刻取得（撮影テスト時に時刻をずらして実験するためにshiftを指定することが出来ます）
 def get_current_time(shift=0):
     """
     現在時刻          shift   日食時刻
@@ -27,7 +27,7 @@ def get_current_time(shift=0):
     JST 21 → (hours = +14) → UTC 17
     JST 22 → (hours = +13) → UTC 17
     """
-    d = datetime.utcnow() + timedelta(hours=shift)
+    d = datetime.now(timezone.utc) + timedelta(hours=shift)
     return d.astimezone(timezone.utc)
 
 # カメラを制御するクラス
@@ -288,7 +288,7 @@ if __name__ == "__main__":
                     #   EOS 6D(ミラーアップ)の場合：1.0以上
                     #   EOS R3の場合：0.7以上
                     #   EOS R3(サイレントシャッターON)の場合：0.6以上
-                    time.sleep(0.6)
+                    time.sleep(1.5)
                     
                 exposure[row['title']]['last'] = now
 
