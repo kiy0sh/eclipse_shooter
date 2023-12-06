@@ -58,6 +58,10 @@ $ sudo apt-get install libatlas-base-dev
 ![実行結果](images/result2.png)
 ![実行結果](images/result3.png)
 
+実行すると、カレントフォルダに eclipse_shooter.log というログファイルが作成されます。
+コンソールには表示されない詳細な情報が保存されていますので、デバッグなどに利用してください。
+ログファイルは都度追記されますので、必要に応じて削除してください。
+
 # 動作確認
 
 * EOS R3 (モードダイアルはMモードにしてください。)
