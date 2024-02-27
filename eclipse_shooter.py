@@ -244,7 +244,10 @@ if __name__ == "__main__":
         data = []
         for i in range(int(row['count'])):
             data.append( {'utc':datetime.combine(datetime.utcnow().date(), row['utc'], tzinfo=timezone.utc)+timedelta(seconds=row['time(sec)']+i*row['interval(sec)']),
-                          'ss':row['ss'], 'iso':row['iso'], 'format':row['format'], 'white_balance':row['white_balance'], 'color_temperature':row['color_temperature']})
+                          'ss':row['ss'], 'iso':row['iso'],
+                          'format':row['format'],
+                          'wait':row['wait'],
+                          'white_balance':row['white_balance'], 'color_temperature':row['color_temperature']})
         exposure[row['title']] = {'last': now, 'list': pd.DataFrame(data).set_index('utc').sort_index().groupby(level=0).last()}
         logger.info("{}\n{}\n".format(row['title'],exposure[row['title']]['list'])+'-'*50 )
 
@@ -262,7 +265,11 @@ if __name__ == "__main__":
             if len(target)>0 :
                 # 最後の１個だけをピックアップ（撮影中に複数のトリガーが発生した場合は直近のトリガーのみを扱う）
                 for index, row in target.tail(1).iterrows():
-                    queue_list.append( {'title':title, 'utc':index, 'ss':row['ss'], 'iso':row['iso'], 'format':row['format'], 'white_balance':row['white_balance'], 'color_temperature':row['color_temperature']} )
+                    queue_list.append( {'title':title, 'utc':index,
+                                        'ss':row['ss'], 'iso':row['iso'],
+                                        'format':row['format'],
+                                        'wait':row['wait'],
+                                        'white_balance':row['white_balance'], 'color_temperature':row['color_temperature']} )
 
         if queue_list :
             # 複数のスクリプトからトリガーが発動されていれば、トリガー発動済みの中で最も古いものを撮影処理
@@ -282,13 +289,7 @@ if __name__ == "__main__":
                         params['Camera and Driver Configuration/Image Settings/Color Temperature'] = str(int(float(cond['color_temperature'])))
                     camera.exposure(params)
 
-                    # 撮像後のスリープ時間などは実際にEOS6Dでトラブルなく撮影できるように追加したので、それぞれの機種や環境で評価必要
-                    #   EOS RPの場合：1.3以上
-                    #   EOS 6Dの場合：1.2以上
-                    #   EOS 6D(ミラーアップ)の場合：1.0以上
-                    #   EOS R3の場合：0.7以上
-                    #   EOS R3(サイレントシャッターON)の場合：0.6以上
-                    time.sleep(1.5)
+                    time.sleep(float(row['wait']))
                     
                 exposure[row['title']]['last'] = now
 
