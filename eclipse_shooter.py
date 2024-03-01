@@ -1,10 +1,8 @@
 # coding: utf-8
 from datetime import datetime, timedelta, timezone
 import logging
-import numpy as np
 import pandas as pd
 import time
-import traceback
 import warnings
 warnings.simplefilter('ignore')
 import gphoto2 as gp
@@ -71,6 +69,11 @@ class camera_control(object):
             choice = 0
         name, addr = self._cameras[choice]
 
+        # カメラ名でログファイルを生成
+        fh = logging.FileHandler(name.replace(' ','_')+'.log')
+        logger.addHandler(fh)
+        fh.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
+
         # 接続情報の取得
         port_info_list = gp.PortInfoList()
         port_info_list.load()
@@ -96,6 +99,9 @@ class camera_control(object):
         self._widgets = dict([self._get_config(self._config)])
 
     def __del__(self):
+        #レリーズOFFしてからクローズ
+        self.release_off()
+
         # カメラをクローズ
         self._camera.exit()
 
@@ -127,19 +133,51 @@ class camera_control(object):
             self._logger.info( ' '*depth*4+f"{label} :" )
             return ( label,dict([self._get_config(config.get_child(i), depth+1) for i in range(count)]) )
 
-    # カメラの設定を変更
-    def setting_change(self, param, value):
+    # 撮影条件を指定して適用
+    def setting_params(self, params={}):
+        while True:
+            # 撮影設定
+            for key,value in params.items() :
+                self.setting_change(key, value)
+
+            if not self._setting_updated :
+                return
+
+            if self.apply_setting():
+                self.sleep(comment='after apply', event_timeout=100, target=[gp.GP_EVENT_TIMEOUT])
+                return
+
+            self.sleep(sec=1.0, event_timeout=1000, comment='wait retry')
+
+    # カメラの現在設定を取得
+    def get_current_value(self, param, get_value=False):
         idx = param.split('/')
         config = self._widgets
         for i in idx:
-            config = config[i]
-        
-        # 選択できる選択肢が与えられている場合には事前にチェック
-#        if 'choices' in config:
-#            if value not in config['choices'] :
-#                self._logger.error( f"You set {value} for [{param}]." )
-#                self._logger.error( f"Value can be choosen from {config['choices']}" )
-#                raise ValueError()
+            config = config.get(i,{})
+
+        if get_value :
+            # 実際にカメラから読み込む
+            return config['widget'].get_value()
+        else:
+            # 現在設定している値を返す
+            return config['current']
+
+    # カメラの設定を変更
+    def setting_change(self, param, option):
+        idx = param.split('/')
+        config = self._widgets
+        for i in idx:
+            config = config.get(i,{})
+
+        # 与えられたパラメータがリストの場合（優先順位をもったパラメータ）
+        if type(option)==list :
+            try:
+                value = [v for v in option if v in config.get('choices',[])][0]
+            except:
+                value = option[0]
+        else:
+            value = option
 
         # 必要があれば設定を変更            
         if config['current'] != value:
@@ -151,46 +189,67 @@ class camera_control(object):
     # 設定変更をカメラに適用
     def apply_setting(self):
         if not self._setting_updated :
-            return
+            return True
 
-        retry = True
-        while retry:
-            try:
-                self._camera.set_config(self._config)
-                retry = False
-            except Exception as e:
-                self._logger.info( traceback.format_exc() )
-
-                # カメライベントループの開始
-                event_timeout = 5000  # イベントを待機するタイムアウト時間（ミリ秒）を設定
-                event_type, event_data = self._camera.wait_for_event(event_timeout)
-                self._logger.info( f"retry[setting] :Type={event_type}, Data={event_data}" )
+        try:
+            self.sleep(comment='wait idle', event_timeout=50, target=[gp.GP_EVENT_TIMEOUT])
+            self._camera.set_config(self._config)
+        except Exception as e:
+            self._logger.debug( f"gphoto2.GPhoto2Error: {e}" )
+            return False
 
         self._setting_updated = False
+        return True
 
     # 撮影条件を指定して撮影
-    def exposure(self, params={}):
-        # 撮影設定
-        for key,value in params.items() :
-            self.setting_change(key, value)
-        self.apply_setting()
-
+    def exposure(self):
         # 撮影を行って、撮影完了まで待機
-        retry = True
-        while retry:
+        while True:
             try:
                 self._camera.trigger_capture()
-                retry = False
+                break
             except:
-                # カメライベントループの開始
-                event_timeout = 5000  # イベントを待機するタイムアウト時間（ミリ秒）を設定
-                event_type, event_data = self._camera.wait_for_event(event_timeout)
-                self._logger.debug( f"retry[setting] :Type={event_type}, Data={event_data}" )
+                self.sleep(comment='retry[exposure]', event_timeout=50, target=[gp.GP_EVENT_TIMEOUT])
+
+    # 撮影条件を指定してレリーズON
+    def release_on(self):
+        while True:
+            self.setting_change('Camera and Driver Configuration/Camera Actions/Canon EOS Remote Release', 'Press Full')
+            if not self.apply_setting():
+                continue
+            break
+
+    # レリーズOFF
+    def release_off(self):
+        while True:
+            self.setting_change('Camera and Driver Configuration/Camera Actions/Canon EOS Remote Release', 'None')
+            if not self.apply_setting():
+                continue
+            break
+
+    def sleep(self, sec=60, event_timeout=100, comment='waiting..', target=[gp.GP_EVENT_CAPTURE_COMPLETE]):
+        # イベントを待機するタイムアウト時間（ミリ秒）を設定
+        start = time.time()
+        while start+sec>time.time() :
+            event_type, event_data = self._camera.wait_for_event(event_timeout)
+            if event_type==gp.GP_EVENT_UNKNOWN :
+                self._logger.debug( f"{comment} :Type=GP_EVENT_UNKNOWN, Data={event_data}" )
+            elif event_type==gp.GP_EVENT_TIMEOUT :
+                self._logger.debug( f"{comment} :Type=GP_EVENT_TIMEOUT" )
+            elif event_type==gp.GP_EVENT_FILE_ADDED :
+                self._logger.info( f"{comment} :Type=GP_EVENT_FILE_ADDED, Data={event_data.folder}/{event_data.name}" )
+            elif event_type==gp.GP_EVENT_CAPTURE_COMPLETE :
+                self._logger.info( f"{comment} :Type=GP_EVENT_CAPTURE_COMPLETE" )
+            else :
+                self._logger.info( f"{comment} :Type={event_type}, Data={event_data}" )
+            
+            # ターゲットが来たら終了
+            if event_type in target :
+                return
 
     # ログハンドラー
     def _callback(self, level, domain, string, data=None):
         self._logger.debug(f"[GPhoto2] level = {level}, domain = {domain}, string = {string}, data = {data}" )
-
 
 # 複数の設定が列記されている場合の組みあわせを作成する関数
 def make_combination(row, keys):
@@ -216,11 +275,8 @@ if __name__ == "__main__":
     # loggerの生成
     logger = logging.getLogger('mylog')
     logger.setLevel(logging.DEBUG)
-    fh = logging.FileHandler('eclipse_shooter.log')
     sh = logging.StreamHandler()
-    logger.addHandler(fh)
     logger.addHandler(sh)
-    fh.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
     sh.setFormatter(logging.Formatter('%(message)s'))
     sh.setLevel(logging.INFO)
 
@@ -228,9 +284,9 @@ if __name__ == "__main__":
     camera = camera_control(logger)
 
     # カメラに初期設定を適用
-    camera.setting_change('Camera and Driver Configuration/Camera Settings/Capture Target', 'Memory card')
-    camera.setting_change('Camera and Driver Configuration/Capture Settings/Drive Mode', 'Single')
-    camera.apply_setting()
+    params = {'Camera and Driver Configuration/Camera Settings/Capture Target' : 'Memory card',
+              'Camera and Driver Configuration/Capture Settings/Metering Mode' : 'Center-weighted average' }
+    camera.setting_params(params)
 
     # 撮影スクリプトデータを読込み
     df = pd.read_excel('usa_eclipse.xlsx')
@@ -244,18 +300,26 @@ if __name__ == "__main__":
         data = []
         for i in range(int(row['count'])):
             data.append( {'utc':datetime.combine(datetime.utcnow().date(), row['utc'], tzinfo=timezone.utc)+timedelta(seconds=row['time(sec)']+i*row['interval(sec)']),
-                          'ss':row['ss'], 'iso':row['iso'],
+                          'interval':row['interval(sec)'],
+                          'ss':row['ss'], 'bracket':row['bracket'], 'iso':row['iso'],
                           'format':row['format'],
-                          'wait':row['wait'],
                           'white_balance':row['white_balance'], 'color_temperature':row['color_temperature']})
         exposure[row['title']] = {'last': now, 'list': pd.DataFrame(data).set_index('utc').sort_index().groupby(level=0).last()}
         logger.info("{}\n{}\n".format(row['title'],exposure[row['title']]['list'])+'-'*50 )
 
     # 撮影ループ
+    second = -1
     while True:
         now = get_current_time()
-        # イベント時刻（第一接触、第二接触、第三接触）までの時間（秒数）をカウントダウン
-        logger.info( "now:{}UTC {}".format(now.strftime('%H:%M:%S'),[title[:3]+':'+str(int((event-now).total_seconds())) for title,event in event_time]),extra={'date':'(utc:{})'.format(str(now)[11:19])} )
+
+        if now.second != second :
+            second = now.second
+            # イベント時刻（第一接触、第二接触、第三接触）までの時間（秒数）をカウントダウン
+            logger.info( "now:{}UTC {} Batt.{}".format(
+                    now.strftime('%H:%M:%S'),
+                    [title[:3]+':'+str(int((event-now).total_seconds())) for title,event in event_time],
+                    camera.get_current_value('Camera and Driver Configuration/Other PTP Device Properties/Battery Level', get_value=True)
+                ),extra={'date':'(utc:{})'.format(str(now)[11:19])} )
 
         # すべての撮影スクリプトリストのうち
         queue_list = []
@@ -263,34 +327,61 @@ if __name__ == "__main__":
             # 現在時刻よりも前の物（撮影時刻になったもの）で未撮影の物(lastより後）をピックアップ
             target = i['list'][i['last']:now]
             if len(target)>0 :
+                logger.debug("\n{}".format(target))
                 # 最後の１個だけをピックアップ（撮影中に複数のトリガーが発生した場合は直近のトリガーのみを扱う）
                 for index, row in target.tail(1).iterrows():
-                    queue_list.append( {'title':title, 'utc':index,
-                                        'ss':row['ss'], 'iso':row['iso'],
+                    queue_list.append( {'title':title, 'utc':index, 'interval':row['interval'],
+                                        'ss':row['ss'], 'bracket':row['bracket'], 'iso':row['iso'],
                                         'format':row['format'],
-                                        'wait':row['wait'],
                                         'white_balance':row['white_balance'], 'color_temperature':row['color_temperature']} )
 
         if queue_list :
             # 複数のスクリプトからトリガーが発動されていれば、トリガー発動済みの中で最も古いものを撮影処理
             for index, row in pd.DataFrame(queue_list).set_index('utc').sort_index().head(1).iterrows():
                 # 組み合わせの生成
-                keys = ['ss','iso','format','white_balance','color_temperature']
+                keys = ['ss','bracket','iso','format','white_balance','color_temperature']
                 for exp in make_combination(row, keys):
                     cond = dict([(keys[i],exp[i]) for i in range(len(keys))])
 
                     # 指定条件で撮像
                     logger.info( f"{row['title']} , {cond}" )
+
                     params = {'Camera and Driver Configuration/Capture Settings/Shutter Speed': str(cond['ss']),
                               'Camera and Driver Configuration/Image Settings/ISO Speed': str(cond['iso']),
                               'Camera and Driver Configuration/Image Settings/Image Format': str(cond['format']),
                               'Camera and Driver Configuration/Image Settings/WhiteBalance': str(cond['white_balance'])}
                     if cond['color_temperature']!='nan':
                         params['Camera and Driver Configuration/Image Settings/Color Temperature'] = str(int(float(cond['color_temperature'])))
-                    camera.exposure(params)
 
-                    time.sleep(float(row['wait']))
-                    
+                    if cond['bracket']!='nan' and cond['bracket']!='Single':
+                        # AEブラケット撮影
+                        camera.setting_params({'Camera and Driver Configuration/Capture Settings/Drive Mode':['Super high speed continuous shooting','Continuous high speed']})
+                        camera.setting_params({'Camera and Driver Configuration/Capture Settings/Bracket Mode':'AE bracket'})
+                        camera.setting_params({'Camera and Driver Configuration/Capture Settings/Auto Exposure Bracketing':str(cond['bracket'])})
+                        camera.setting_params(params)
+
+                        camera.release_on()
+
+                        # GP_EVENT_CAPTURE_COMPLETE または GP_EVENT_TIMEOUT(3sec) が来るまでシャッターON
+                        camera.sleep(comment='release_on', event_timeout=3000, target=[gp.GP_EVENT_CAPTURE_COMPLETE,gp.GP_EVENT_TIMEOUT])
+                        camera.release_off()
+
+                    else:
+                        if camera.get_current_value('Camera and Driver Configuration/Capture Settings/Auto Exposure Bracketing')!='off' :
+                            camera.exposure()
+                            # GP_EVENT_CAPTURE_COMPLETE または GP_EVENT_TIMEOUT(1sec) が来るまでシャッター待機
+                            camera.sleep(sec=3.0, comment='dummy exposure', event_timeout=1000, target=[gp.GP_EVENT_CAPTURE_COMPLETE,gp.GP_EVENT_TIMEOUT])
+
+                        # １枚ずつ設定・撮影
+                        camera.setting_params({'Camera and Driver Configuration/Capture Settings/Auto Exposure Bracketing':'off'})
+                        camera.setting_params({'Camera and Driver Configuration/Capture Settings/Drive Mode':'Single'})
+                        camera.setting_params({'Camera and Driver Configuration/Capture Settings/Bracket Mode':'Unknown value 0000'})
+                        camera.setting_params(params)
+                        camera.exposure()
+
+                        # GP_EVENT_CAPTURE_COMPLETE または GP_EVENT_TIMEOUT(1sec) が来るまでシャッター待機
+                        camera.sleep(sec=3.0, comment='exposure', event_timeout=1000, target=[gp.GP_EVENT_CAPTURE_COMPLETE,gp.GP_EVENT_TIMEOUT])
+
                 exposure[row['title']]['last'] = now
 
-        time.sleep(1)
+        camera.sleep(0.1, event_timeout=10, comment='idle' )
